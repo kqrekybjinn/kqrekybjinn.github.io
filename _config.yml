@@ -28,7 +28,7 @@ twitter_username: secret
 github_username:  kqrekybjinn
 
 # Build settings
-theme: minima
+theme:  jekyll-theme-docs
 plugins:
   - jekyll-feed
 
