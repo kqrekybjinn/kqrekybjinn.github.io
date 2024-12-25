@@ -20,12 +20,11 @@
 
 title: Amu blog
 email: lmsfshzy@gmail.com
-description: >-
-  enjoy your technology life
+description: >- # this means to ignore newlines until "baseurl:"
+  progress with amu
 baseurl: "" # the subpath of your site, e.g. /blog
-
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: secret
+twitter_username: kqre
 github_username:  kqrekybjinn
 
 # Build settings
