@@ -28,7 +28,7 @@ twitter_username: kqre
 github_username:  kqrekybjinn
 
 # Build settings
-theme:  jekyll-theme-docs
+theme:  jekyll-theme-cayman
 plugins:
   - jekyll-feed
 
