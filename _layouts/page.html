@@ -3,14 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <style>
+    /* 这里可以放入关于页面的 CSS 样式 */
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      padding: 0.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #555;
+      padding: 0.5rem;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .intro h2 {
+      font-size: 2.5rem;
+      color: #333;
+    }
+
+    .intro p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .about-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .about-content img {
+      width: 40%;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-content .text {
+      width: 55%;
+    }
+
+    .about-content .text p {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
+
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>{{ page.title }}</h1>
+    <h1>{{ site.title }}</h1>
+    <p>{{ page.title }}</p>
   </header>
-  <main>
-    {{ content }}
-  </main>
-</body>
-</html>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="{{ site.baseurl }}/about">About</a>
+    <a href="{{ site.baseurl }}/posts">Posts</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    {{ content }} <!-- This is where the content from about.md will be injected -->
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; {{ site.time | date: "%Y" }
