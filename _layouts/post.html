@@ -1,16 +1,125 @@
+---
+layout: page
+title: Posts
+permalink: /posts/
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    .post-list {
+      margin-top: 2rem;
+    }
+
+    .post-item {
+      padding: 1.5rem;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s;
+    }
+
+    .post-item:hover {
+      background-color: #f9f9f9;
+    }
+
+    .post-item h3 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .post-item p {
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
+
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>{{ page.title }}</h1>
+    <h1>{{ site.title }}</h1>
+    <p>{{ page.title }}</p>
   </header>
-  <main>
-    {{ content }}
-  </main>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="{{ site.baseurl }}/about">About</a>
+    <a href="{{ site.baseurl }}/posts">Posts</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="post-list">
+      {% for post in site.posts %}
+        <div class="post-item">
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; {{ site.time | date: "%Y" }}</p>
+  </footer>
+
 </body>
 </html>
